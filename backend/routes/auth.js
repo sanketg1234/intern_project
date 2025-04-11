@@ -1,3 +1,24 @@
+const registerUser = async (req, res) => {
+  const { username, email, password } = req.body;
+
+  // Validate password length
+  if (password.length < 8) {
+    return res.status(400).json({ error: 'Password must be at least 8 characters long' });
+  }
+
+  // ... (rest of the code remains the same)
+};
+
+const loginUser = async (req, res) => {
+  const { email, password } = req.body;
+
+  // Check for null or undefined email or password
+  if (!email || !password) {
+    return res.status(400).json({ error: 'Email and password are required' });
+  }
+
+  // ... (rest of the code remains the same)
+};
 // routes/auth.js
 const express = require('express');
 const router = express.Router();
